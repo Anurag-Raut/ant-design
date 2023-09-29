@@ -245,6 +245,9 @@ const InternalTable = <RecordType extends AnyObject = AnyObject>(
       ...changeEventInfo,
       ...info,
     };
+      React.useEffect(function () {
+    triggerOnChange({}, 'dataSource', false);
+  }, [rawData]);
 
     if (reset) {
       changeEventInfo.resetPagination?.();
